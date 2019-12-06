@@ -1,0 +1,43 @@
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+
+      <div class="form-group">
+          <label class="col-md-4">Code</label>
+          <input type="text" class="form-control" formControlName="code" #code [(ngModel)]="asset.code" />
+        </div>
+        <div *ngIf="angForm.controls['code'].invalid && (angForm.controls['code'].dirty || angForm.controls['code'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['code'].errors.required">
+            Code is required.
+          </div>
+        </div>
+          
+        <div class="form-group">
+          <label class="col-md-4">Name</label>
+          <input type="text" class="form-control" formControlName="name" #name [(ngModel)]="asset.name" />
+        </div>
+        <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['name'].errors.required">
+            Name is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4">Owner</label>
+          <input type="text" class="form-control" formControlName="owner" #owner [(ngModel)] = "asset.owner" />
+        </div>
+        <div *ngIf="angForm.controls['owner'].invalid && (angForm.controls['owner'].dirty || angForm.controls['owner'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['owner'].errors.required">
+            Owner is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button (click)="updateAsset(code.value, name.value, owner.value)"
+          [disabled]="angForm.invalid" 
+          class="btn btn-primary">Update</button>
+        </div>
+
+    </form>
+  </div>
+</div>

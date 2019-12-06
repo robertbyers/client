@@ -1,0 +1,37 @@
+<!--LOGIN -->
+<div class="card">
+  <div class="card-body">
+    <form [formGroup]="angForm" novalidate>
+
+      <div class="form-group">
+        <label class="col-md-4">Name</label>
+        <input type="text" class="form-control" formControlName="name" #name/>
+      </div>
+      <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['name'].errors.required">
+          Name is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="col-md-4">Password</label>
+        <input type="text" class="form-control" formControlName="password" #password />
+      </div>
+      <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+        <div *ngIf="angForm.controls['password'].errors.required">
+          Password is required.
+        </div>
+      </div>
+
+      <div class="form-group">
+        <button (click)="login(name.value, password.value)"
+          [disabled]="angForm.pristine || angForm.invalid" 
+          class="btn btn-primary">Login
+        </button>
+        <div *ngIf="errorMsg.length > 0">
+          Wrong Password.
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
