@@ -43,6 +43,7 @@ export class AddAssetComponent implements OnInit {
     this.angForm = this.fb.group({
       location: ['', Validators.required ],
       name: ['', Validators.required ],
+      owner: ['', Validators.required ],
       price: ['', Validators.required ]
     });
   }
@@ -51,10 +52,11 @@ export class AddAssetComponent implements OnInit {
    * Add asset.
    * @param location 
    * @param name 
+   * @param owner
    * @param price 
    */
-  addAsset(location, name, price) {
-    this.as.addAsset(location, name, price);
+  addAsset(location, name, owner, price) {
+    this.as.addAsset(location, name, owner, price);
     this.router.navigate(['asset']);
   }  
 }

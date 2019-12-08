@@ -42,10 +42,12 @@
         </div>
       </div>
 
+      <app-drag-drop></app-drag-drop>
+
       <div class="form-group">
-        <button (click)="addAsset(code.value, name.value, owner.value)"
+        <button (click)="addAsset(location.value, name.value, owner.value, price.value)"
         [disabled]="angForm.pristine || angForm.invalid" 
-        class="btn btn-primary">Add</button>
+        class="btn btn-primary fileupload">Add</button>
       </div>
     </form>
   </div>

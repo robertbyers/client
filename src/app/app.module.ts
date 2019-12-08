@@ -9,10 +9,12 @@ import { AssetModule } from './asset/asset.module';
 import { AssetService } from './shared/services/asset.service';
 
 import { AppComponent } from './app.component';
+import { DragDropFileUploadDirective } from './drag-drop-file-upload.directive';
+import { DragDropComponent } from './asset/drag-drop/drag-drop.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
   ],
   imports: [
     AnalyticsModule,

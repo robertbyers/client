@@ -21,9 +21,9 @@ export class AssetService {
    * @param name 
    * @param owner 
    */
-  addAsset(code, name, owner) {
-    // console.log("addAsset: code" + code);
-    let asset = { "code" : code, "name" : name, "owner" : owner }      
+  addAsset(location, name, owner, price) {
+    // console.log("addAsset: location" + location);
+    let asset = { "location" : location, "name" : name, "owner" : owner , "price" : price}      
     this.http.post(this.uri + "add", asset)
           .subscribe(res => console.log('Done'));
   }

@@ -8,12 +8,16 @@ import { AssetRoutingModule } from './asset.routing';
 import { AddAssetComponent } from './add-asset/add-asset.component';
 import { GetAssetsComponent } from './get-assets/get-assets.component';
 import { EditAssetComponent } from './edit-asset/edit-asset.component';
+import { DragDropComponent } from './drag-drop/drag-drop.component';
+import { DragDropFileUploadDirective } from '../drag-drop-file-upload.directive';
 
 @NgModule({
   declarations: [
     AddAssetComponent,
     EditAssetComponent,
-    GetAssetsComponent
+    GetAssetsComponent,
+    DragDropComponent,
+    DragDropFileUploadDirective
   ],
   imports: [
     AssetRoutingModule,
