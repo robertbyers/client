@@ -3,10 +3,7 @@ import { FormGroup,  FormBuilder,  Validators } from '@angular/forms';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute, Router } from '@angular/router';
 
-import { AssetService } from '../../shared/services/asset.service';
-import { AuthenticationService } from 'src/app/shared/services/authentication.service';
-import { Observable } from 'rxjs';
-import { MethodCall } from '@angular/compiler';
+import { AuthenticationService } from '../../shared/services/authentication.service';
 
 @Component({
   selector: 'login.component',
@@ -16,7 +13,7 @@ import { MethodCall } from '@angular/compiler';
 export class LoginComponent implements OnInit {
 
   angForm: FormGroup;
-  errorMsg: string = "";
+
   /**
    * Constructor.
    * @param fb 
@@ -28,13 +25,18 @@ export class LoginComponent implements OnInit {
     private router: Router, 
     private fb: FormBuilder, 
     private as: AuthenticationService) {
-      this.createForm();
+    this.createForm();
   }
 
   /**
    * On init.
    */
-  ngOnInit() {
+  ngOnInit() {    
+    let cache = localStorage.getItem("current");
+    if (cache) {      
+      console.log("User is already logged in. Automatically routing to home.");
+      this.router.navigate(['./home']);
+    }
   }
 
   /**
@@ -53,21 +55,6 @@ export class LoginComponent implements OnInit {
    * @param password 
    */
   login(name, password) {
-
-    // WRITE YOUR CODE HERE.
-    let meh = false;
-    this.as.login(name, password).subscribe(
-            data => {
-               // refresh the list
-              console.log('Done', data);
-              this.router.navigate(['asset']);
-             },
-             error => {
-               console.error("Error saving food!");
-               this.errorMsg = "Wrong password/user name."
-             }
-    );
-    
-    //this.router.navigate(['asset']);
+    this.as.login(name, password);  
   }  
 }
