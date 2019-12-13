@@ -1,7 +1,7 @@
 <table class="table table-hover">
   <thead>
   <tr>
-      <td>Code</td>
+      <td>Location</td>
       <td>Name</td>
       <td>Owner</td>
       <td colspan="2">Actions</td>
@@ -10,7 +10,7 @@
 
   <tbody>
       <tr *ngFor="let asset of assets">
-          <td>{{ asset.code }}</td>
+          <td>{{ asset.location }}</td>
           <td>{{ asset.name }}</td>
           <td>{{ asset.owner }}</td>
           <td><a [routerLink]="['edit', asset._id]" class="btn btn-primary">Edit</a></td>
@@ -19,15 +19,21 @@
   </tbody>
 </table>
 <div class="container">
-    <div class="card-deck">
-        <div class="card mb-4" *ngFor="let asset of assets">
-            <img class="card-img-top img-fluid" src="//placehold.it/500x280" alt="Card image cap">
-            <div class="card-body">
-                <h4 class="card-title">{{ asset.name }}</h4>
-                <p class="card-text">{{ asset.code }}</p>
-                <p class="card-text"><small class="text-muted">{{ asset.owner }}</small></p>
+    <div class="row">
+        <div class= "col-md-4 col-xs-6">
+            <div class="card" *ngFor="let asset of assets">
+                <img class="card-img-top img-fluid" src= {{asset.location}} alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">{{ asset.name }}</h4>
+                    <p class="card-text">{{ asset.code }}</p>
+                    <p class="card-text"><small class="text-muted">{{ asset.owner }}</small></p>
+                </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="container">
+        <div class="card-deck">
         <div class="card mb-4">
             <img class="card-img-top img-fluid" src="//placehold.it/500x280" alt="Card image cap">
             <div class="card-body">

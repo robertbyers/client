@@ -1,5 +1,6 @@
 export default class Asset {
-  code: Number;
+  location: String;
   name: String;
   owner: String;
+  price: Number;
 }
