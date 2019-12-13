@@ -1,0 +1,27 @@
+.container {
+    clear: both;
+}
+
+.title {
+    font-size: 18px;
+    padding: 0px 0px 25px 0px;
+}
+
+.foodimg{
+    width: 100%;
+}
+
+.row{
+    width: 100%;
+    padding-left: 10%;
+    text-align: center;
+}
+
+.description {
+    width: 30%;
+    text-align: center;
+    background: cornflowerblue;
+    border-style: solid;
+    height: 50%;
+}
+

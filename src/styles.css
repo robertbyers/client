@@ -6,7 +6,14 @@
 body {
     margin: 0;
     padding: 25px 0 0 0;
-    background: #291464;
+    width: 100%;
+    height: 100%;
+
+    background: linear-gradient(180deg, rgba(83, 96, 104, 0.15) 0%, rgba(255, 255, 255, 0) 100%), url(assets/background/grocerystorebackground.jpg), #FFFFFF;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-size: cover;
+
 }
 
 .container {
@@ -19,7 +26,7 @@ body {
 }
 
 .fileupload {
-    background-image: url(".\assets\upload-icon.png");
+    background-image: url("\assets\upload-icon.png");
     background-repeat: no-repeat;
     background-size: 100px;
     background-position: center;
