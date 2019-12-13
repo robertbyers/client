@@ -1,80 +1,119 @@
-<!--REGISTER-->
 
-<div class="card">
-  <div class="card-body">
-    <form [formGroup]="angForm" novalidate>
+<div class="box">
+  
+  <div class="card1">
+    <div class="card-body">
 
-      <div class="form-group">
-        <label class="col-md-4">Name</label>
-        <input type="text" class="form-control" formControlName="name" #name/>
-      </div>
-      <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['name'].errors.required">
-          Name is required.
+      <b>REGISTER</b>
+      <br/>
+      <br/>
+
+      <form [formGroup]="angForm" novalidate>
+
+        <div class="form-group">
+          <label class="col-md-4">Username</label>
+          <input type="text" class="form-control" formControlName="username" #username/>
         </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-md-4">Title</label>
-        <input type="text" class="form-control" formControlName="title" #title/>
-      </div>
-      <div *ngIf="angForm.controls['title'].invalid && (angForm.controls['title'].dirty || angForm.controls['title'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['title'].errors.required">
-          Title is required.
+        <div *ngIf="angForm.controls['username'].invalid && (angForm.controls['username'].dirty || angForm.controls['username'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['username'].errors.required">
+            Username is required.
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label class="col-md-4">Company</label>
-        <input type="text" class="form-control" formControlName="company" #company/>
-      </div>
-      <div *ngIf="angForm.controls['company'].invalid && (angForm.controls['company'].dirty || angForm.controls['company'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['company'].errors.required">
-          Company is required.
+
+        <div class="form-group">
+            <label class="col-md-4">Name</label>
+            <input type="text" class="form-control" formControlName="name" #name/>
+          </div>
+          <div *ngIf="angForm.controls['name'].invalid && (angForm.controls['name'].dirty || angForm.controls['name'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['name'].errors.required">
+              Name is required.
+            </div>
+          </div>
+
+
+        <div class="form-group">
+          <label class="col-md-4">Email</label>
+          <input type="text" class="form-control" formControlName="email" #email/>
         </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-md-4">Address</label>
-        <input type="text" class="form-control" formControlName="address" #address/>
-      </div>
-      <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['address'].errors.required">
-          Addresss is required.
+        <div *ngIf="angForm.controls['email'].invalid && (angForm.controls['email'].dirty || angForm.controls['email'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['email'].errors.required">
+            Email is required.
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <label class="col-md-4">Password</label>
-        <input type="text" class="form-control" formControlName="password" #password />
-      </div>
-      <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['password'].errors.required">
-          Password is required.
+
+        <div class="form-group">
+            <label class="col-md-4">Address</label>
+            <input type="text" class="form-control" formControlName="address" #address/>
+          </div>
+          <div *ngIf="angForm.controls['address'].invalid && (angForm.controls['address'].dirty || angForm.controls['address'].touched)" class="alert alert-danger">
+            <div *ngIf="angForm.controls['address'].errors.required">
+              Addresss is required.
+            </div>
+          </div>          
+
+
+
+        <div class="form-group">
+          <label class="col-md-4">City</label>
+          <input type="text" class="form-control" formControlName="city" #city/>
         </div>
-      </div>
-
-      <div class="form-group">
-        <label class="col-md-4">Password Confirmation</label>
-        <input type="text" class="form-control" formControlName="confirmation" #confirmation />
-      </div>
-      <div *ngIf="angForm.controls['confirmation'].invalid && (angForm.controls['confirmation'].dirty || angForm.controls['confirmation'].touched)" class="alert alert-danger">
-        <div *ngIf="angForm.controls['confirmation'].errors.required">
-          Password confirmation is required.
+        <div *ngIf="angForm.controls['city'].invalid && (angForm.controls['city'].dirty || angForm.controls['City'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['city'].errors.required">
+            City is required.
+          </div>
         </div>
-      </div>
 
-      <div class="form-group">
-        <button (click)="register(
-          name.value, 
-          title.value,
-          company.value,
-          address.value,
-          password.value,
-          confirmation.value)"
-        [disabled]="angForm.pristine || angForm.invalid" 
-        class="btn btn-primary">Register</button>
-      </div>
-    </form>
+        <div class="form-group">
+          <label class="col-md-4">State</label>
+          <input type="text" class="form-control" formControlName="state" #state/>
+        </div>
+        <div *ngIf="angForm.controls['state'].invalid && (angForm.controls['state'].dirty || angForm.controls['state'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['state'].errors.required">
+            State is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4">Zip</label>
+          <input type="text" class="form-control" formControlName="zip" #zip/>
+        </div>
+        <div *ngIf="angForm.controls['zip'].invalid && (angForm.controls['zip'].dirty || angForm.controls['zip'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['zip'].errors.required">
+            Zip is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4">Password</label>
+          <input type="text" class="form-control" formControlName="password" #password />
+        </div>
+        <div *ngIf="angForm.controls['password'].invalid && (angForm.controls['password'].dirty || angForm.controls['password'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['password'].errors.required">
+            Password is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="col-md-4">Password Confirmation</label>
+          <input type="text" class="form-control" formControlName="confirmation" #confirmation />
+        </div>
+        <div *ngIf="angForm.controls['confirmation'].invalid && (angForm.controls['confirmation'].dirty || angForm.controls['confirmation'].touched)" class="alert alert-danger">
+          <div *ngIf="angForm.controls['confirmation'].errors.required">
+            Password confirmation is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+          <button 
+            (click)="register(username.value, name.value, email.value, address.value, city.value, state.value, zip.value ,password.value, confirmation.value)"
+            [disabled]="angForm.pristine || angForm.invalid" 
+            class="btn btn-primary">Register</button>
+          &nbsp;
+          <button [routerLink]="['/authentication']" class="btn btn-primary">Login</button>     
+        </div>
+      </form>
+    </div>
   </div>
 </div>

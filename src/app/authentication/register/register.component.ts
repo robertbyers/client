@@ -39,23 +39,36 @@ export class RegisterComponent implements OnInit {
    */
   createForm() {
     this.angForm = this.fb.group({
+      username: ['', Validators.required ],
       name: ['', Validators.required ],
-      title: ['', Validators.required],
-      company: ['', Validators.required],
-      address: ['', Validators.required],
       password: ['', Validators.required ],
-      confirmation: ['', Validators.required]
+      confirmation: ['', Validators.required ],
+      email: ['', Validators.required ],
+      address: ['', Validators.required ],
+      city: ['', Validators.required ],
+      state: ['', Validators.required ],
+      zip: ['', Validators.required ],
     });
   }
 
   /**
    * Register.
-   * @param name 
+   * @param username
+   * @param name
+   * @param address 
+   * @param role 
    * @param password 
+   * @param email 
+   * @param address
+   * @param city
+   * @param state
+   * @param zip 
    */
-  register(name, title, company, address, password) {
-    this.as.register(name, title, company, address, password);
-    this.router.navigate(['authentication/login']);
+  register(username, name, email, password, confirmation, address, city, state, zip) {
+    if (password == confirmation) {
+      this.as.register(username, name, email, password, confirmation, address, city, state, zip);
+      this.router.navigate(['authentication']);
+    }
   }  
 
 }
