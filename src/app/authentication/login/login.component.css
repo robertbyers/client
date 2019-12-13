@@ -13,7 +13,6 @@
 .card {
     padding: 50px 25px;
     border-radius: 50px;
-    opacity: .9;
     height: auto;
     overflow: auto;
 }
