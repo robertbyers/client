@@ -1,5 +1,5 @@
 
-<div class="box">
+<div style="left:30%; top: 35%" class="box">
   
   <div class="card1">
     <div class="card-body">
@@ -109,9 +109,10 @@
           <button 
             (click)="register(username.value, name.value, email.value, address.value, city.value, state.value, zip.value ,password.value, confirmation.value)"
             [disabled]="angForm.pristine || angForm.invalid" 
+            style = "border-radius: 20px"
             class="btn btn-primary">Register</button>
           &nbsp;
-          <button [routerLink]="['/authentication']" class="btn btn-primary">Login</button>     
+          <button [routerLink]="['/authentication']" style = "border-radius: 20px" class="btn btn-primary">Login</button>     
         </div>
       </form>
     </div>
